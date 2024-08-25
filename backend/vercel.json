@@ -1,0 +1,13 @@
+{
+  "version": 3,
+  "name": "task-manager",
+  "build": {
+    "command": "node index.js"
+  },
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "api/$1"
+    }
+  ]
+}
