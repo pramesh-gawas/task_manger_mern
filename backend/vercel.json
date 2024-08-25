@@ -1,13 +1,15 @@
 {
-  "version": 3,
-  "name": "task-manager",
-  "build": {
-    "command": "node index.js"
-  },
+  "version": 2,
+  "builds": [
+    {
+      "src": "index.js",
+      "use": "@vercel/node"
+    }
+  ],
   "routes": [
     {
-      "src": "/api/(.*)",
-      "dest": "api/$1"
+      "src": "/(.*)",
+      "dest": "index.js"
     }
   ]
 }
