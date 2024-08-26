@@ -6,19 +6,22 @@ import { FaCheck, FaPen, FaPlus, FaTrash } from "react-icons/fa";
 import { FaSearch } from "react-icons/fa";
 import { toast, ToastContainer } from "react-toastify";
 import { CreateTask, DeleteTaskById, GetAllTask, UpdateTaskById } from "../api";
+import "react-toastify/dist/ReactToastify.css";
+import { notify } from "../utils";
 
 function App() {
   const [input, setInput] = useState("");
   const [task, setTask] = useState([]);
   const [Copytask, setCopytask] = useState([]);
   const [update, setUpdate] = useState(null);
+
   const fetchAllTask = async () => {
     try {
       const { data } = await GetAllTask();
       setTask(data);
       setCopytask(data);
     } catch (err) {
-      toast("failed to create task ", "error");
+      notify("failed to create task ", "error");
     }
   };
 
@@ -40,13 +43,13 @@ function App() {
       const { msessage, success } = await CreateTask(obj);
       if (success?.status == false) {
         //success toast
-        toast(msessage, "error");
+        notify(msessage, "error");
       } else {
         //error toast
-        toast(msessage, "success");
+        notify(msessage, "success");
       }
     } catch (err) {
-      toast("failed to create task ", "error");
+      notify("failed to create task ", "error");
     }
     fetchAllTask();
   };
@@ -78,13 +81,13 @@ function App() {
       const { msessage, success } = await UpdateTaskById(_id, obj);
       if (success?.status == false) {
         //success toast
-        toast(msessage, "error");
+        notify(msessage, "error");
       } else {
         //error toast
-        toast(msessage, "success");
+        notify(msessage, "success");
       }
     } catch (err) {
-      toast("failed to check task ", "error");
+      notify("failed to check task ", "error");
     }
     fetchAllTask();
   };
@@ -135,6 +138,8 @@ function App() {
   const SearchChange = (e) => {
     const term = e.target.value;
     const oldtask = [...Copytask];
+    console.log(oldtask);
+
     const result = oldtask.filter((item) => item.taskName.includes(term));
     setTask(result);
   };

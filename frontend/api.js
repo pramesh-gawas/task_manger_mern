@@ -2,7 +2,6 @@ import { API_URL } from "./utils";
 
 export const CreateTask = async (taskObj) => {
   const url = `${API_URL}/task`;
-
   const options = {
     method: "POST",
     headers: {
@@ -13,7 +12,6 @@ export const CreateTask = async (taskObj) => {
   try {
     const result = await fetch(url, options);
     const data = await result.json();
-
     return data;
   } catch (error) {
     return error;
