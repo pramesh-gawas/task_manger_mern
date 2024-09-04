@@ -40,13 +40,13 @@ function App() {
       isDone: false,
     };
     try {
-      const { msessage, success } = await CreateTask(obj);
+      const { message, success } = await CreateTask(obj);
       if (success?.status == false) {
         //success toast
-        notify(msessage, "error");
+        notify(message, "error");
       } else {
         //error toast
-        notify(msessage, "success");
+        notify(message, "success");
       }
     } catch (err) {
       notify("failed to create task ", "error");
@@ -56,16 +56,16 @@ function App() {
 
   const handleDelete = async (id) => {
     try {
-      const { msessage, success } = await DeleteTaskById(id);
+      const { message, success } = await DeleteTaskById(id);
       if (success?.status == false) {
-        //success toast
-        toast(msessage, "error");
+        //success notify
+        notify(message, "error");
       } else {
-        //error toast
-        toast(msessage, "success");
+        //error notify
+        notify(message, "success");
       }
     } catch (err) {
-      toast("failed to delete task ", "error");
+      notify("failed to delete task ", "error");
     }
     fetchAllTask();
   };
@@ -78,13 +78,13 @@ function App() {
     };
 
     try {
-      const { msessage, success } = await UpdateTaskById(_id, obj);
+      const { message, success } = await UpdateTaskById(_id, obj);
       if (success?.status == false) {
-        //success toast
-        notify(msessage, "error");
+        //success notify
+        notify(message, "error");
       } else {
-        //error toast
-        notify(msessage, "success");
+        //error notify
+        notify(message, "success");
       }
     } catch (err) {
       notify("failed to check task ", "error");
@@ -99,16 +99,16 @@ function App() {
       isDone: isDone,
     };
     try {
-      const { msessage, success } = await UpdateTaskById(_id, obj);
+      const { message, success } = await UpdateTaskById(_id, obj);
       if (success?.status == false) {
-        //success toast
-        toast(msessage, "error");
+        //success notify
+        notify(message, "error");
       } else {
-        //error toast
-        toast(msessage, "success");
+        //error notify
+        notify(message, "success");
       }
     } catch (err) {
-      toast("failed to check task ", "error");
+      notify("failed to check task ", "error");
     }
     fetchAllTask();
   };
