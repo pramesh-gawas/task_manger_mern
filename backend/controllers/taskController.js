@@ -5,9 +5,9 @@ const createtask = async (req, res) => {
   try {
     const task = new taskModel(data);
     await task.save();
-    res.status(200).json({ msessage: "task crated", success: true });
+    res.status(200).json({ message: "task created", success: true });
   } catch (error) {
-    res.status(500).json({ msessage: "error creatting data", success: false });
+    res.status(500).json({ message: "error creatting data", success: false });
   }
 };
 

@@ -21,7 +21,7 @@ function App() {
       setTask(data);
       setCopytask(data);
     } catch (err) {
-      notify("failed to create task ", "error");
+      notify(err, "error");
     }
   };
 
