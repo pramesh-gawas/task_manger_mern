@@ -1,31 +1,18 @@
-<h2>MERN Stack Voting App<h2/>
-A beginner-friendly MERN stack (MongoDB, Express, React, Node.js) project for managing a simple online voting system. The app provides separate functionality for voters (users) and admins, with login, live vote count, voting and full admin management features.
+<h2>MERN Stack task Manager app<h2/>
+This project demonstrates a to-do list application developed using the MERN stack (MongoDB, Express.js, React, Node.js) and Bootstrap.The application offers a user-friendly interface with features like task filtering.
 
 <h3>Features</h3>
-Voter (User)
-- Register / Login
+User
 
-- Cast a vote (only once) for a candidate
+- user can add, update, delete the task
+- data consistance is maintain
+- user can check the task when its done
+ 
 
-- See live vote count
-- View profile info
-- Update profile info
-- Change password
-
-Admin
-- Admin login
-- Dashboard with live vote statistics
-- View all users and candidates
-- Add, edit, delete candidates
-- Add, edit,  delete users
-- View profile info
-- Update profile info
-- Change password
 
 Tech Stack
-- Frontend: ReactJS, Axios, React Router
-- Backend: Node.js, Express js, cors, bcrypt, nodemailer, multer
+- Frontend: HTML,css, javascript,React,
+- Backend: Node.js, Express js
 - Database: MongoDB
-- Authentication: JWT (JSON Web Tokens)
-- Styling: CSS / material UI
-- Hosting: vercel, render
+- Styling: CSS /bootstrap
+- Hosting: vercel
